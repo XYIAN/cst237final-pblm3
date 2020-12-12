@@ -19,14 +19,14 @@ float circleC(float input){
     float circCir = 2*3.14*input;
     //print circumferenc
     cout << endl<<"The circumference of the circle with radius = "<< input<< " meters is "<< circCir <<" meters." <<endl; 
-    return 0; //success
+    return circCir; //success
 }
 float circleA(float input){
     //get area
     float circArea = (3.14)*(input*input); 
     //print area  
-    cout << endl << "The area of the triangle with side "<< input<<" meters is "<< circArea <<" square meters."<<endl;
-    return 0; //success
+    cout << endl << "The area of the circle with radius="<< input<<" meters is "<< circArea <<" square meters."<<endl;
+    return circArea; //success
 }
 float triangleP(float input){
     //get perimeter p = a + b + c 
@@ -34,27 +34,28 @@ float triangleP(float input){
     triPerim =  input + input + input;
     //print perimeter 
     cout << "The perimeter of the tiangle with side=" << input <<" meters is " << triPerim << " meters"; 
-    return input; 
+    return triPerim; 
 }
 float triangleA(float input){
      //get area 
-    float triArea =(input*input)*(1/2); 
+    float height = (input* sqrt(3))/2;
+    float triArea =(1/2)*(input)*(height); 
     //print area 
-    cout << endl << "The area of the triangle with side = "<<input<< " meters is "<<triArea<<" square meters."<<endl;
+    cout << endl << "The area of the triangle with side="<<input<< " meters is "<<triArea<<" square meters."<<endl;
     return input; 
 }
 float squareP(float input){
     //get perimeter 
     float squarePer = input * 4; 
     //print perimeter 
-    cout << endl<< "The perimeter of the square with side= "<< input << " meters is "<<squarePer<<" meters."<< endl; 
+    cout << endl<< "The perimeter of the square with side="<< input << " meters is "<<squarePer<<" meters."<< endl; 
     return squarePer; 
 }
 float squareA(float input){  
     //get area 
     float squareArea = input*input; 
     //print area
-    cout << "The area of the square with side= "<< input << " meters is "<< squareArea << " square meters."<<endl; 
+    cout << "The area of the square with side="<< input << " meters is "<< squareArea << " square meters."<<endl; 
     return squareArea; 
 }
 
@@ -65,19 +66,22 @@ int main() {
       cout << "Please enter a shape(1=Circle, 2=Triangle, 3=Square)";
       int shape; 
       cin >> shape; 
-      cout <<endl<< "Please enter value:";
-      float val;
-      cin >> val;  
+      float val;  
       if(shape == 1){//circle
-        cout <<circleC(val);
-        cout <<circleA(val); 
+        cout <<endl<< "Please enter value:";
+        //cout <<"val is"<<val;
+        circleC(val);
+        //cout <<"val is"<<val;
+        circleA(val); 
       
       }
       if(shape == 2){//triangle 
         cout <<endl<< "Please enter value:";
         float val; 
-        cin >> val;  
+        cin >> val;
+        //cout <<"val is"<<val;  
         triangleP(val);
+        //cout <<"val is"<<val;
         triangleA(val);  
       }
       if(shape == 3){//square
