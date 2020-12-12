@@ -88,8 +88,8 @@ int main() {
         cout <<endl<< "Please enter value:";
         float val; 
         cin >> val;  
-        cout << squareP(val);
-        cout << squareA(val);      
+        squareP(val);
+        squareA(val);      
       }
       cout << endl<< "Would you like to enter a new shape and value?(Y/N)";
       cin >> choice;  
